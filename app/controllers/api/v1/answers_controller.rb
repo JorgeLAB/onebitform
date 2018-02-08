@@ -6,8 +6,8 @@ class Api::V1::AnswersController < Api::V1::ApiController
 
 
   def index
-    @answers = @form.answers
-    render json: @answers, include: 'questions_answers'
+    @questions = @form.questions
+    render json: @questions, include: 'questions_answers'
   end
 
 
@@ -30,7 +30,7 @@ class Api::V1::AnswersController < Api::V1::ApiController
 
   private
 
-  
+
   def set_answer
     @answer = Answer.find(params[:id])
   end
