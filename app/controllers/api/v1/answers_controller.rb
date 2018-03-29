@@ -37,7 +37,7 @@ class Api::V1::AnswersController < Api::V1::ApiController
 
 
   def set_form
-    @form = (@answer)? @answer.form : Form.find(params[:form_id])
+    @form = (@answer)? @answer.form : Form.friendly.find(params[:form_id])
   end
 
 
